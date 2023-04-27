@@ -3,47 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> .inner-fade - plugin </title>
+    <title>현유정-고양이잡지</title>
+
     <style>
-        * {margin: 0; padding: 0;}
-        body {background-color: #ddd;}
-        ul, li {margin: 0; padding: 0; list-style:none;}
-        .slide {width: 500px; height: 500px;/* 슬라이드박스 내 위치잡기*/
-            border:10px solid #f9fcd5; 
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /*0.3=30% 투명도*/
-            position: absolute; left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
+        *{margin: 0; padding: 0;}
+        body {background-color: #c6d1ff;}
+        ul,li{margin: 0; padding: 0; list-style: none;}
+        .cat {position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);}
+        .cat .slide {width: 500px; height: 250px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
-        ul, li {margin: 0; padding: 0; list-style: none;}
-       /* 스타일 잡는 위치 조정 */ .slide ul li a img {width: 500px; }
-    </style>
-    <script src="./script/jquery-1.11.3.js"></script>
+        .cat .slide ul li a img {width: 500px;}
+
+      
+
+        /* btn */
+        .cat .text {text-align: center; margin-top: 30px;}
+            .cat .text a {background-color: #080933; 
+            padding: 10px 20px; /*상하, 좌우*/
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff; 
+            font-size: 13px;
+        }
+        .cat .text a:hover {background-color: #a08cb4;}
+
+    </style>  
+    <script src="./script/jquery-1.12.4.min.js"></script>
     <script src="./script/jquery.innerfade.js"></script>
     <script>
-        /* jQuery 순서 맞춰주어야 오류x */
-        
-        // $(function(){실행문});
-        /*
-        여러줄 주석
-        */
+        // $(function(){})
         $(function(){
             $(".inner-fade").innerfade({
                 animationtype:"fade",
-                timeout:2000 // 2000=2초
+                timeout:2000 //2초
             })
-        });
 
+        })
     </script>
+    
 </head>
 <body>
-    <!-- .slide>ul.inner-fade>li*3>a>img -->
-    <div class="slide">
+    <!-- .cat>.slide+.text -->
+    <div class="cat">
+        <div class="slide">
+        <!-- ul.inner-fade>li*4>a>img -->
         <ul class="inner-fade">
-            <li><a href="#"><img src="./images/logo1.svg" alt="logo1"></a></li>
-            <li><a href="#"><img src="./images/logo2.svg" alt="logo2"></a></li>
-            <li><a href="#"><img src="./images/logo3.svg" alt="logo3"></a></li>
+            <li><a href="./images/cat.pdf"><img src="./images/1.svg" alt="고양이매거진1p"></a></li>
+            <li><a href="./images/cat.pdf"><img src="./images/2.svg" alt="고양이매거진2p"></a></li>
+            <li><a href="./images/cat.pdf"><img src="./images/3.svg" alt="고양이매거진3p"></a></li>
+            <li><a href="./images/cat.pdf"><img src="./images/4.svg" alt="고양이매거진4p"></a></li>
         </ul>
     </div>
+        <div class="text">
+        <!-- a{미리보기} -->
+        <a href="./images/cat.pdf">미리보기</a>
+        <a href="./images/catMagazine.zip">다운받기</a>
+    </div>
+    </div>
 </body>
+
 </html>
